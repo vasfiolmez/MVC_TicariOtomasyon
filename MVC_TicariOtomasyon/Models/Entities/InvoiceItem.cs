@@ -9,9 +9,10 @@ namespace MVC_TicariOtomasyon.Models.Entities
     {
         public int InvoiceItemId { get; set; }
         public string Description { get; set; }
-
         public int Piece { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal Amount { get; set; }
+
+        public Invoice Invoice { get; set; }
     }
 }
