@@ -47,6 +47,7 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
             var value = context.Categories.Find(id);
             return View(value);
         }
+
         [HttpPost]
         public ActionResult UpdateCategory(Category category)
         {

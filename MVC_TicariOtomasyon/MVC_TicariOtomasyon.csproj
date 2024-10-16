@@ -2014,9 +2014,6 @@
     <Content Include="AdminLTE-3.0.4\.editorconfig" />
     <Content Include="AdminLTE-3.0.4\.eslintignore" />
     <Content Include="AdminLTE-3.0.4\.eslintrc" />
-    <Content Include="AdminLTE-3.0.4\.github\ISSUE_TEMPLATE\bug-report-for-adminlte-v2-4-x.md" />
-    <Content Include="AdminLTE-3.0.4\.github\ISSUE_TEMPLATE\bug-report-for-adminlte-v3-x.md" />
-    <Content Include="AdminLTE-3.0.4\.github\ISSUE_TEMPLATE\feature-request-for-adminlte-v3-x.md" />
     <Content Include="AdminLTE-3.0.4\.npmignore" />
     <Content Include="AdminLTE-3.0.4\.travis.yml" />
     <Content Include="AdminLTE-3.0.4\build\js\.jscsrc" />
