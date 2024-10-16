@@ -5,14 +5,14 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MVC_TicariOtomasyon.Context.Context>
+    internal sealed class Configuration : DbMigrationsConfiguration<MVC_TicariOtomasyon.Context.TicariOtomasyonContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(MVC_TicariOtomasyon.Context.Context context)
+        protected override void Seed(MVC_TicariOtomasyon.Context.TicariOtomasyonContext context)
         {
             //  This method will be called after migrating to the latest version.
 

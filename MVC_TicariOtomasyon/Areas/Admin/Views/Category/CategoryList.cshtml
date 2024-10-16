@@ -1,0 +1,30 @@
+﻿@model  List<MVC_TicariOtomasyon.Models.Entities.Category>
+@{
+    ViewBag.Title = "CategoryList";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width: 10px">#</th>
+            <th>Kategori Adı</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+            <tr>
+                <td> @item.CategoryId</td>
+                <td>@item.Name</td>
+                <td><a href="/Admin/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Admin/Category/UpdateCategory/@item.CategoryId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+            }             
+    </tbody>
+</table>
+<br />
+<a href="/Admin/Category/CreateCategory/" class="btn btn-primary">Yeni Kategori Oluştur</a>
+
