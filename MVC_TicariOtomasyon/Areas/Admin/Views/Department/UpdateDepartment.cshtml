@@ -1,0 +1,16 @@
+﻿@model MVC_TicariOtomasyon.Models.Entities.Department
+@{
+    ViewBag.Title = "UpdateDepartment";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post">
+     @Html.HiddenFor(x=>x.DepartmentId)
+    <label>Departman Adı</label>
+    @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-outline-warning">Departman Güncelle</button>
+</form>
+
+

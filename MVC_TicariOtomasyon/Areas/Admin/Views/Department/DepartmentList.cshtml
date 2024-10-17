@@ -1,0 +1,43 @@
+﻿@model  List<MVC_TicariOtomasyon.Models.Entities.Department>
+@{
+    ViewBag.Title = "DepartmentList";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width: 10px">#</th>
+            <th>Departman Adı</th>
+            <th>Durum</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.DepartmentName</td>
+                <td>@item.Status</td>
+                <td>
+                    @if (item.Status == true)
+                    {
+                        <a href="/Admin/Department/DepartmentStatusToChangeFalse/@item.DepartmentId" class="btn btn-default" style="background-color:black papayawhip">Pasif Yap</a>
+                    }
+                    else
+                    {
+                        <a href="/Admin/Department/DepartmentStatusToChangeTrue/@item.DepartmentId" class="btn btn-success">Aktif Yap</a>
+                    }
+
+                    <a href="/Admin/Department/UpdateDepartment/@item.DepartmentId" class="btn btn-warning">Güncelle</a>
+                    <a href="/Admin/Department/DetailDepartment/@item.DepartmentId" class="btn btn-outline-primary">Detaylar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<a href="/Admin/Department/CreateDepartment/" class="btn btn-primary">Yeni Kategori Oluştur</a>

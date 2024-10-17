@@ -130,6 +130,8 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminLayoutController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DepartmentController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Context\TicariOtomasyonContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2270,6 +2272,13 @@
     <Content Include="Areas\Admin\Views\Category\CategoryList.cshtml" />
     <Content Include="Areas\Admin\Views\Category\CreateCategory.cshtml" />
     <Content Include="Areas\Admin\Views\Category\UpdateCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\ProductList.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\CreateProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\UpdateProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\DepartmentList.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\CreateDepartment.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\UpdateDepartment.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\DetailDepartment.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

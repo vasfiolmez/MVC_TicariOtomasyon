@@ -24,7 +24,8 @@ namespace MVC_TicariOtomasyon.Models.Entities
         public string Image { get; set; }
         public bool Status { get; set; }
 
-        public Category Category { get; set; }
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; }
 
         public ICollection<SalesMovement> SalesMovements { get; set; }
     }

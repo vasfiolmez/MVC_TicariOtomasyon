@@ -1,0 +1,16 @@
+﻿@model MVC_TicariOtomasyon.Models.Entities.Department
+@{
+    ViewBag.Title = "CreateDepartment";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post">
+
+    <label>Departman Adı</label>
+    @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary">Departman Oluştur</button>
+</form>
+
+

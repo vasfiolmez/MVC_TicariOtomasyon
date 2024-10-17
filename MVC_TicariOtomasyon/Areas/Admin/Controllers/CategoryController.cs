@@ -26,7 +26,7 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult CreateCategory(Category category)
         {
-            ViewBag.baslik = "Kategori Oluşturma Sayfası";
+            ViewBag.baslik = "Kategori Oluşturma Sayfası";                     
             context.Categories.Add(category);
             context.SaveChanges();
             return RedirectToAction("CategoryList", "Category", "Admin");

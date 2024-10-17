@@ -14,7 +14,9 @@ namespace MVC_TicariOtomasyon.Models.Entities
         public decimal Price { get; set; }
         public decimal Amount { get; set; }
 
-
+        public int ProductId { get; set; }
+        public int EmployeeId { get; set; }
+        public int CustomerId { get; set; }
         public Product Product{ get; set; }
         public Employee Employee { get; set; }
         public Customer Customer { get; set; }

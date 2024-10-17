@@ -21,6 +21,7 @@ namespace MVC_TicariOtomasyon.Models.Entities
 
         public ICollection<SalesMovement> SalesMovements { get; set; }
 
+        public int DepartmentId { get; set; }
         public Department Department { get; set; }
     }
 }

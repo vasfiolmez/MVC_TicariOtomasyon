@@ -1,0 +1,45 @@
+﻿@model  List<MVC_TicariOtomasyon.Models.Entities.Product>
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width: 10px">#</th>
+            <th>Ürün Adı</th>
+            <th>Marka</th>
+            <th>Stok</th>
+            <th>Alış Fiyatı</th>
+            <th>Satış Fiyatı</th>
+            <th>Kategori</th>
+            <th>Görsel</th>
+
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.ProductName</td>
+                <td>@item.Brand</td>
+                <td>@item.Stock</td>
+                <td>@item.BuyingPrice</td>
+                <td>@item.SalePrice</td>
+                <td>@item.Category.Name</td>
+                <td>@item.Image</td>
+                <td><a href="/Admin/Product/DeleteProduct/@item.ProductId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Admin/Product/UpdateProduct/@item.ProductId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<a href="/Admin/Product/CreateProduct/" class="btn btn-primary">Yeni Kategori Oluştur</a>
+
