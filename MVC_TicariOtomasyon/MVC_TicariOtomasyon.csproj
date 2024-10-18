@@ -130,6 +130,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminLayoutController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
     <Compile Include="Areas\Admin\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Context\TicariOtomasyonContext.cs" />
@@ -2280,6 +2281,10 @@
     <Content Include="Areas\Admin\Views\Department\UpdateDepartment.cshtml" />
     <Content Include="Areas\Admin\Views\Department\DetailDepartment.cshtml" />
     <Content Include="Areas\Admin\Views\Department\EmployeeDepartmentSales.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\CustomerList.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\CreateCustomer.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\UpdateCustomer.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\DetailCustomer.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

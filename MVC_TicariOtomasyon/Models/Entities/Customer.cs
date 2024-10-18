@@ -12,16 +12,13 @@ namespace MVC_TicariOtomasyon.Models.Entities
         public int CustomerId { get; set; }
 
         [Column(TypeName = "Varchar")]
-        [StringLength(30)]
+        [StringLength(30,ErrorMessage ="En fazla 30 karakter kullanabilirsiniz")]
         public string Name { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
+        [Required]
         public string Surname { get; set; }
-
-        [Column(TypeName = "Varchar")]
-        [StringLength(30)]
-        public string Title { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(20)]
@@ -30,6 +27,8 @@ namespace MVC_TicariOtomasyon.Models.Entities
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string Mail { get; set; }
+
+        public bool Status { get; set; }
 
         public ICollection<SalesMovement> SalesMovements { get; set; }
     }
