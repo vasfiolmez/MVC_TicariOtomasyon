@@ -2279,6 +2279,7 @@
     <Content Include="Areas\Admin\Views\Department\CreateDepartment.cshtml" />
     <Content Include="Areas\Admin\Views\Department\UpdateDepartment.cshtml" />
     <Content Include="Areas\Admin\Views\Department\DetailDepartment.cshtml" />
+    <Content Include="Areas\Admin\Views\Department\EmployeeDepartmentSales.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

@@ -72,5 +72,13 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
             var values = context.Employees.Where(x => x.DepartmentId == id).ToList();
             return View(values);
         }
+        public ActionResult EmployeeDepartmentSales(int id)
+        {
+            var personelAdı = context.SalesMovements.Where(x => x.EmployeeId == id).Select(y => y.Employee.Name + " " +y.Employee.Surname).FirstOrDefault();
+
+            ViewBag.baslik = personelAdı + "  Personeliniz Satış Hareketleri";
+            var value=context.SalesMovements.Where(x=>x.EmployeeId==id).ToList();
+            return View(value);
+        }
     }
 }

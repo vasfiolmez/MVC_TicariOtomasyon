@@ -14,6 +14,6 @@ namespace MVC_TicariOtomasyon.Models.Entities
         public decimal Amount { get; set; }
 
         public int InvoiceId { get; set; }
-        public Invoice Invoice { get; set; }
+        public virtual Invoice Invoice { get; set; }
     }
 }
