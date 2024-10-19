@@ -132,7 +132,9 @@
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
     <Compile Include="Areas\Admin\Controllers\DepartmentController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SalesMovementController.cs" />
     <Compile Include="Context\TicariOtomasyonContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2285,6 +2287,12 @@
     <Content Include="Areas\Admin\Views\Customer\CreateCustomer.cshtml" />
     <Content Include="Areas\Admin\Views\Customer\UpdateCustomer.cshtml" />
     <Content Include="Areas\Admin\Views\Customer\DetailCustomer.cshtml" />
+    <Content Include="Areas\Admin\Views\Employee\EmployeeList.cshtml" />
+    <Content Include="Areas\Admin\Views\Employee\CreateEmployee.cshtml" />
+    <Content Include="Areas\Admin\Views\Employee\UpdateEmployee.cshtml" />
+    <Content Include="Areas\Admin\Views\Employee\DetailEmployee.cshtml" />
+    <Content Include="Areas\Admin\Views\SalesMovement\SalesMovementList.cshtml" />
+    <Content Include="Areas\Admin\Views\SalesMovement\CreateSalesMovement.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

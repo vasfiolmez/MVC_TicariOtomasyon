@@ -1,0 +1,26 @@
+﻿@model MVC_TicariOtomasyon.Models.Entities.Employee
+@{
+    ViewBag.Title = "UpdateEmployee";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.EmployeeId)
+    <label>Personel Adı</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    <label>Personel Soyadı</label>
+    @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+    <br />
+    <label>Resmi</label>
+    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+    <br />
+    <label></label>
+    @Html.DropDownListFor(x => x.DepartmentId, (List<SelectListItem>)ViewBag.employeeDepartment, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary">Personel Bilgilerini Güncelle</button>
+</form>
+
+

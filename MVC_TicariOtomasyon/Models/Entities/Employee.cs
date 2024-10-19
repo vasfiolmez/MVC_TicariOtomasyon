@@ -18,9 +18,8 @@ namespace MVC_TicariOtomasyon.Models.Entities
         [StringLength(30)]
         public string Surname { get; set; }
         public string Image { get; set; }
-
+        public bool Status { get; set; }
         public ICollection<SalesMovement> SalesMovements { get; set; }
-
         public int DepartmentId { get; set; }
         public virtual Department Department { get; set; }
     }
