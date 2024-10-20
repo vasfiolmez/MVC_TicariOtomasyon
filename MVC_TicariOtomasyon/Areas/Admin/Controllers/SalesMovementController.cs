@@ -33,14 +33,15 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
                                                    select new SelectListItem
                                                    {
                                                        Text = x.Name + " " + x.Surname,
-                                                       Value = x.Surname.ToString()
+                                                       Value = x.EmployeeId.ToString()
                                                    }).ToList();
        
 
             List<SelectListItem> valuesCustomer= (from x in context.Customers.ToList()
                                                   select new SelectListItem
                                                   {
-                                                      Text=x.Name + " " + x.Surname, Value=x.Surname.ToString()
+                                                      Text=x.Name + " " + x.Surname,
+                                                      Value=x.CustomerId.ToString()
 
                                                   }).ToList() ;
 
@@ -53,9 +54,10 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult CreateSalesMovement(SalesMovement sales)
         {
-            ViewBag.baslik = "Yeni Ürün Satışı";
-            context.SalesMovements.Add(sales);
+            ViewBag.baslik = "Yeni Ürün Satışı"; 
             sales.Date=DateTime.Parse( DateTime.Now.ToShortDateString());
+            context.SalesMovements.Add(sales);
+          
             context.SaveChanges();
             return RedirectToAction("SalesMovementList", "SalesMovement", "Admin");
         }
