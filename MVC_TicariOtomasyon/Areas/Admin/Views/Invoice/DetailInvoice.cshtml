@@ -1,0 +1,39 @@
+﻿@model List< MVC_TicariOtomasyon.Models.Entities.InvoiceItem>
+@{
+    ViewBag.Title = "DetailInvoice";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<table class="table table-hover">
+
+    <thead>
+        <tr>
+            
+            <th>Açıklama</th>
+            <th>Miktar</th>
+            <th>Birim Fiyat</th>
+            <th>Tutar</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            
+            <tr>
+     
+                <td>@item.Description</td>
+                <td>@item.Piece</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.Amount</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<a href="/Admin/Invoice/CreateInvoiceItem" class="btn btn-primary" ">Yeni Fatura Kalem Girişi</a>
+
+
+

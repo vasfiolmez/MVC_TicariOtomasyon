@@ -1,0 +1,24 @@
+﻿@model MVC_TicariOtomasyon.Models.Entities.InvoiceItem
+@{
+    ViewBag.Title = "CreateInvoiceItem";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.InvoiceItemId)
+
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description,5,1, new { @class = "form-control" })
+    <br />
+    <label>Miktar</label>
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <br />
+    <label>Birim Fiyatı</label>
+    @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control" })
+    <br />
+    <label>Tutar</label>
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Fatura Kalemi Oluştur</button>
+</form>

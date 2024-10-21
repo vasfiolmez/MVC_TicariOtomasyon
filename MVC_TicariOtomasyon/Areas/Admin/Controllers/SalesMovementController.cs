@@ -61,46 +61,77 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
             context.SaveChanges();
             return RedirectToAction("SalesMovementList", "SalesMovement", "Admin");
         }
-        public ActionResult SalesMovementStatusToChangeFalse(int id)
-        {
-            var value = context.SalesMovements.Find(id);
-            //value.Status = false;
-            context.SaveChanges();
-            return RedirectToAction("SalesMovementList", "SalesMovement", "Admin");
-        }
-        public ActionResult SalesMovementStatusToChangeTrue(int id)
-        {
-            var value = context.SalesMovements.Find(id);
-            //value.Status = true;
-            context.SaveChanges();
-            return RedirectToAction("SalesMovementList", "SalesMovement", "Admin");
-        }
+        //public ActionResult SalesMovementStatusToChangeFalse(int id)
+        //{
+        //    var value = context.SalesMovements.Find(id);
+        //    //value.Status = false;
+        //    context.SaveChanges();
+        //    return RedirectToAction("SalesMovementList", "SalesMovement", "Admin");
+        //}
+        //public ActionResult SalesMovementStatusToChangeTrue(int id)
+        //{
+        //    var value = context.SalesMovements.Find(id);
+        //    //value.Status = true;
+        //    context.SaveChanges();
+        //    return RedirectToAction("SalesMovementList", "SalesMovement", "Admin");
+        //}
 
         [HttpGet]
         public ActionResult UpdateSalesMovement(int id)
         {
-            ViewBag.baslik = "Departman Güncelleme Sayfası";
+            ViewBag.baslik = "Ürün Satışını Güncelleme";
+
+            List<SelectListItem> valuesProduct = (from x in context.Products.ToList()
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.ProductName.ToString(),
+                                                      Value = x.ProductId.ToString(),
+                                                  }).ToList();
+
+            List<SelectListItem> valuesEmployee = (from x in context.Employees.ToList()
+                                                   select new SelectListItem
+                                                   {
+                                                       Text = x.Name + " " + x.Surname,
+                                                       Value = x.EmployeeId.ToString()
+                                                   }).ToList();
+
+
+            List<SelectListItem> valuesCustomer = (from x in context.Customers.ToList()
+                                                   select new SelectListItem
+                                                   {
+                                                       Text = x.Name + " " + x.Surname,
+                                                       Value = x.CustomerId.ToString()
+
+                                                   }).ToList();
+
+            ViewBag.valuesProduct = valuesProduct;
+            ViewBag.valuesEmployee = valuesEmployee;
+            ViewBag.valuesCustomer = valuesCustomer;
 
             var value = context.SalesMovements.Find(id);
             return View(value);
         }
 
         [HttpPost]
-        public ActionResult UpdateSalesMovement(SalesMovement department)
+        public ActionResult UpdateSalesMovement(SalesMovement salesMovement)
         {
-            ViewBag.baslik = "Departman Güncelleme Sayfası";
-            var value = context.SalesMovements.Find(department.SalesMovementId);
-            //value.SalesMovementName = department.SalesMovementName;
+            ViewBag.baslik = "Ürün Satışını Güncelleme";
+            var value = context.SalesMovements.Find(salesMovement.SalesMovementId);
+            value.ProductId = salesMovement.ProductId;
+            value.CustomerId = salesMovement.CustomerId;
+            value.EmployeeId = salesMovement.EmployeeId;
+            value.Piece = salesMovement.Piece;
+            value.Price = salesMovement.Price;
+            value.Amount = salesMovement.Amount;
             context.SaveChanges();
             return RedirectToAction("SalesMovementList", "SalesMovement", "Admin");
         }
 
         public ActionResult DetailSalesMovement(int id)
-        {
-            //var departmanAdı = context.SalesMovements.Where(x => x.SalesMovementId == id).Select(y => y.SalesMovementName).FirstOrDefault();
-            //ViewBag.baslik = departmanAdı + "  Departmanında Çalışanların Listesi";
-            //var values = context.Employees.Where(x => x.SalesMovementId == id).ToList();
-            return View();
+        {          
+            ViewBag.baslik ="Satış Detayı";
+            var values = context.SalesMovements.Where(x => x.SalesMovementId == id).ToList();
+            return View(values);
         }
         public ActionResult EmployeeSalesMovementSales(int id)
         {

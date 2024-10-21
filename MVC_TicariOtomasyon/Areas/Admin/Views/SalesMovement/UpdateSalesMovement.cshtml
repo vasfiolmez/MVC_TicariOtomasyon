@@ -1,0 +1,32 @@
+﻿@model MVC_TicariOtomasyon.Models.Entities.SalesMovement
+@{
+    ViewBag.Title = "UpdateSalesMovement";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post">
+
+    @Html.HiddenFor(x=>x.SalesMovementId)
+
+    <label>Ürün Adı</label>
+    @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.valuesProduct, new { @class = "form-control" })
+    <br />
+    <label>Müşteri Adı</label>
+    @Html.DropDownListFor(x => x.CustomerId, (List<SelectListItem>)ViewBag.valuesCustomer, new { @class = "form-control" })
+    <br />
+    <label>Personel Adı</label>
+    @Html.DropDownListFor(x => x.EmployeeId, (List<SelectListItem>)ViewBag.valuesEmployee, new { @class = "form-control" })
+    <br />
+    <label>Adet</label>
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <br />
+    <label>Satış Fiyatı</label>
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    <label>Toplam Fiyat</label>
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-default" style="background-color:lightgoldenrodyellow">Satışı Güncelle</button>
+</form>
+

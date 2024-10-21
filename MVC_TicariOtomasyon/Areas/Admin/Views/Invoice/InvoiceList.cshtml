@@ -1,0 +1,55 @@
+﻿@model List<MVC_TicariOtomasyon.Models.Entities.Invoice>
+@{
+    ViewBag.Title = "InvoiceList";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width: 10px">#</th>
+            <th>Seri No </th>
+            <th>Sıra No</th>
+            <th>Vergi Dairesi</th>
+            <th>Saat</th>
+            <th>Tarih</th>
+            <th>Toplam</th>
+            <th>Teslim Eden</th>
+            <th>Teslim Alan</th>
+
+            
+            <th>İşlemler</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@item.InvoiceId</td>
+                <td>@item.InvoiceSerialNo</td>
+                <td>@item.InvoiceSequenceNo</td>
+                <td>@item.TaxOffice</td>
+                <td>@item.Hour</td>
+                <td>@item.Date.ToShortDateString()</td>
+                <td>@item.Toplam</td>
+                <td>@item.DelivereredBy</td>
+                <td>@item.ReceivedBy</td>
+               
+                <td>
+                    <a href="/Admin/Invoice/UpdateInvoice/@item.InvoiceId" class="btn btn-default" style="background-color:lightgoldenrodyellow">Güncelle</a>
+                    <a href="/Admin/Invoice/DetailInvoice/@item.InvoiceId" class="btn btn-default" style="background-color:greenyellow">Detaylar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<a href="/Admin/Invoice/CreateInvoice/" class="btn btn-primary">Yeni Fatura Girişi</a>
+
+
+

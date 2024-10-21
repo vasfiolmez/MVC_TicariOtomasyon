@@ -23,7 +23,10 @@ namespace MVC_TicariOtomasyon.Models.Entities
         [Column(TypeName = "Varchar")]
         [StringLength(60)]
         public string TaxOffice { get; set; }
-        public DateTime Hour { get;set; }
+
+        [Column(TypeName = "Char")]
+        [StringLength(5)]
+        public string Hour { get;set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
@@ -32,6 +35,8 @@ namespace MVC_TicariOtomasyon.Models.Entities
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string ReceivedBy { get; set; }
+
+        public decimal Toplam { get; set; }
 
         public ICollection<InvoiceItem> InvoiceItems { get; set; }
 

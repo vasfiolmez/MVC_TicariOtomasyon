@@ -1,0 +1,40 @@
+﻿@model MVC_TicariOtomasyon.Models.Entities.Invoice
+@{
+    ViewBag.Title = "UpdateInvoice";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post">
+
+    @Html.HiddenFor(x=>x.InvoiceId)
+
+    <label>Seri No</label>
+    @Html.TextBoxFor(x => x.InvoiceSerialNo, new { @class = "form-control" })
+    <br />
+    <label>Sıra No</label>
+    @Html.TextBoxFor(x => x.InvoiceSequenceNo, new { @class = "form-control" })
+    <br />
+    <label>Vergi Dairesi</label>
+    @Html.TextBoxFor(x => x.TaxOffice, new { @class = "form-control" })
+    <br />
+    <label>Saat</label>
+    @Html.TextBoxFor(x => x.Hour, new { @class = "form-control" })
+    <br />
+    <label>Tarih</label>
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    <label>Toplam Tutar</label>
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    <label>Teslim Eden</label>
+    @Html.TextBoxFor(x => x.DelivereredBy, new { @class = "form-control" })
+    <br />
+    <label>Teslim Alan</label>
+    @Html.TextBoxFor(x => x.ReceivedBy, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary">Faturayı Düzelt</button>
+</form>
+
+
+

@@ -133,6 +133,8 @@
     <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
     <Compile Include="Areas\Admin\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\Admin\Controllers\EmployeeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InvoiceController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PdfController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\SalesMovementController.cs" />
     <Compile Include="Context\TicariOtomasyonContext.cs" />
@@ -2293,6 +2295,14 @@
     <Content Include="Areas\Admin\Views\Employee\DetailEmployee.cshtml" />
     <Content Include="Areas\Admin\Views\SalesMovement\SalesMovementList.cshtml" />
     <Content Include="Areas\Admin\Views\SalesMovement\CreateSalesMovement.cshtml" />
+    <Content Include="Areas\Admin\Views\SalesMovement\UpdateSalesMovement.cshtml" />
+    <Content Include="Areas\Admin\Views\SalesMovement\DetailSalesMovement.cshtml" />
+    <Content Include="Areas\Admin\Views\Pdf\ProductList.cshtml" />
+    <Content Include="Areas\Admin\Views\Invoice\InvoiceList.cshtml" />
+    <Content Include="Areas\Admin\Views\Invoice\CreateInvoice.cshtml" />
+    <Content Include="Areas\Admin\Views\Invoice\UpdateInvoice.cshtml" />
+    <Content Include="Areas\Admin\Views\Invoice\DetailInvoice.cshtml" />
+    <Content Include="Areas\Admin\Views\Invoice\CreateInvoiceItem.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
