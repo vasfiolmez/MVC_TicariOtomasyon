@@ -133,7 +133,9 @@
     <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
     <Compile Include="Areas\Admin\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\Admin\Controllers\EmployeeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GalleryController.cs" />
     <Compile Include="Areas\Admin\Controllers\InvoiceController.cs" />
+    <Compile Include="Areas\Admin\Controllers\IstatisticsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PdfController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\SalesMovementController.cs" />
@@ -2303,6 +2305,8 @@
     <Content Include="Areas\Admin\Views\Invoice\UpdateInvoice.cshtml" />
     <Content Include="Areas\Admin\Views\Invoice\DetailInvoice.cshtml" />
     <Content Include="Areas\Admin\Views\Invoice\CreateInvoiceItem.cshtml" />
+    <Content Include="Areas\Admin\Views\Istatistics\IstatisticsList.cshtml" />
+    <Content Include="Areas\Admin\Views\Gallery\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2332,6 +2336,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Istatıstıcs\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>

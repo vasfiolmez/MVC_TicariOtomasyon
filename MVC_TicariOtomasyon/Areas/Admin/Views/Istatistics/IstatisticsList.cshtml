@@ -1,0 +1,215 @@
+﻿
+@{
+    ViewBag.Title = "IstatisticsList";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
+
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-info"><i class="fa fa-user"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> <b>Müşteri </b></span>
+                <span class="info-box-number">@ViewBag.musteriSayisi</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-gray-light"><i class="fa-solid fa-store"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"><b> Ürün Sayısı</b></span>
+                <span class="info-box-number">@ViewBag.urunSayisi</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-gradient-primary"><i class="fa-solid fa-users-line"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"><b>Personel Sayısı </b></span>
+                <span class="info-box-number">@ViewBag.personelSayisi</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-warning"><i class="fa-solid fa-layer-group"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> <b> Kategori Sayısı</b></span>
+                <span class="info-box-number">@ViewBag.kategoriSayisi</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-gradient-lime"><i class="fa-solid fa-cubes"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> <b> Toplam Stok</b></span>
+                <span class="info-box-number">@ViewBag.stokSayisi</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-gradient-olive"><i class="fa-solid fa-copyright"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> <b>Marka Sayısı</b></span>
+                <span class="info-box-number">@ViewBag.markaSayisi</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-gradient-navy"><i class="fa-solid fa-minus"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> <b>Kritik Seviyedeki Ürünler </b></span>
+                <span class="info-box-number">@ViewBag.kritikSeviye</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-gradient-maroon"><i class="far fa-star"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> <b>En Yüksek Fiyatlı Ürün </b></span>
+                <span class="info-box-number">@ViewBag.fiyatiEnYuksekOlanUrun</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-gradient-gray-dark"><i class="fa-solid fa-arrow-down"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> <b> En Düşük Fiyatlı Ürün</b></span>
+                <span class="info-box-number">@ViewBag.fiyatiEnDusukOlanUrun</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-danger"><i class="far fa-flag"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> <b> En Çok Markası Olan</b> </span>
+                <span class="info-box-number">@ViewBag.enFazlaUrunluMarka</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-indigo"><i class="fa-solid fa-square"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> <b>Buzdolabı Sayısı </b></span>
+                <span class="info-box-number">@ViewBag.buzdolabıSayısı</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-gradient-purple"><i class="fa-solid fa-laptop"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> <b>Bilgisayar Sayısı</b> </span>
+                <span class="info-box-number">@ViewBag.bilgisayarSayısı</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-gradient-orange"><i class="fa-solid fa-award"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> <b> En çok satan ürün</b></span>
+                <span class="info-box-number">@ViewBag.enCokSatanUrun</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-gradient-green"><i class="fa-solid fa-money-check-dollar"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> <b>Kasadaki Tutar </b></span>
+                <span class="info-box-number">@ViewBag.kasadakiTutar</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-fuchsia"><i class="far fa-copy"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> <b>Bugünkü Satışlar</b></span>
+                <span class="info-box-number">@ViewBag.bugunkuSatis</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box">
+            <span class="info-box-icon bg-gradient-gray"><i class="fa-solid fa-calendar-week"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> <b>Bugünkü Kasa </b></span>
+                <span class="info-box-number">@ViewBag.bugunkuKazanc</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+    </div>
+</div>
