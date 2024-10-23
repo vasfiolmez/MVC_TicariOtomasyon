@@ -138,6 +138,7 @@
     <Compile Include="Areas\Admin\Controllers\IstatisticsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PdfController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductDetailController.cs" />
     <Compile Include="Areas\Admin\Controllers\SalesMovementController.cs" />
     <Compile Include="Context\TicariOtomasyonContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2307,6 +2308,7 @@
     <Content Include="Areas\Admin\Views\Invoice\CreateInvoiceItem.cshtml" />
     <Content Include="Areas\Admin\Views\Istatistics\IstatisticsList.cshtml" />
     <Content Include="Areas\Admin\Views\Gallery\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductDetail\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
