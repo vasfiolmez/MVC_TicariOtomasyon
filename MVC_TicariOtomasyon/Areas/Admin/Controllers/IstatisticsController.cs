@@ -1,9 +1,12 @@
 ﻿using MVC_TicariOtomasyon.Context;
+using MVC_TicariOtomasyon.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
 {
@@ -20,7 +23,7 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
             ViewBag.kategoriSayisi = context.Categories.Count().ToString();
             ViewBag.stokSayisi = context.Products.Sum(x => x.Stock).ToString();
             ViewBag.markaSayisi = context.Products.Select(x => x.Brand).Count().ToString();
-            ViewBag.kritikSeviye = context.Products.Where(x => x.Stock < 50).Select(x=>x.ProductId).Count().ToString();
+            ViewBag.kritikSeviye = context.Products.Where(x => x.Stock < 50).Select(x => x.ProductId).Count().ToString();
             ViewBag.fiyatiEnYuksekOlanUrun = context.Products.OrderByDescending(x => x.SalePrice).Select(x => x.ProductName).FirstOrDefault();
             ViewBag.fiyatiEnDusukOlanUrun = context.Products.OrderBy(x => x.SalePrice).Select(x => x.ProductName).FirstOrDefault();
             ViewBag.enFazlaUrunluMarka = context.Products.GroupBy(x => x.Brand).OrderByDescending(x => x.Count()).Select(y => y.Key).FirstOrDefault();
@@ -32,5 +35,21 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
             ViewBag.bugunkuKazanc = context.SalesMovements.Where(x => x.Date == DateTime.Today).Sum(x => x.Amount).ToString();
             return View();
         }
+        public ActionResult SimpleTables()
+        {
+            ViewBag.baslik = "Dashboard";
+
+            var sehirler = context.Customers.Select(x => x.City).ToList();
+            var liste = sehirler.GroupBy(x => x).OrderByDescending(y => y.Count()).Select(s => new SehirModel { Key = s.Key, Count = s.Count() }).ToList();
+            ViewBag.list = liste;
+
+
+
+
+
+
+            return View();
+        }
     }
 }
+ 

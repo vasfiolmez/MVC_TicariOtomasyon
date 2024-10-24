@@ -156,6 +156,7 @@
     <Compile Include="Models\Entities\Product.cs" />
     <Compile Include="Models\Entities\Invoice.cs" />
     <Compile Include="Models\Entities\SalesMovement.cs" />
+    <Compile Include="Models\Entities\SehirModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2309,6 +2310,7 @@
     <Content Include="Areas\Admin\Views\Istatistics\IstatisticsList.cshtml" />
     <Content Include="Areas\Admin\Views\Gallery\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ProductDetail\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Istatistics\SimpleTables.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
