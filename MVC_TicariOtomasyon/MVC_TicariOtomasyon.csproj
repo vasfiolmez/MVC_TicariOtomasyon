@@ -140,6 +140,7 @@
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductDetailController.cs" />
     <Compile Include="Areas\Admin\Controllers\SalesMovementController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ToDoListController.cs" />
     <Compile Include="Context\TicariOtomasyonContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -157,6 +158,7 @@
     <Compile Include="Models\Entities\Invoice.cs" />
     <Compile Include="Models\Entities\SalesMovement.cs" />
     <Compile Include="Models\Entities\SehirModel.cs" />
+    <Compile Include="Models\Entities\ToDoList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2311,6 +2313,9 @@
     <Content Include="Areas\Admin\Views\Gallery\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ProductDetail\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Istatistics\SimpleTables.cshtml" />
+    <Content Include="Areas\Admin\Views\Employee\PageDetailEmployees.cshtml" />
+    <Content Include="Areas\Admin\Views\ToDoList\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ToDoList\Todo.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

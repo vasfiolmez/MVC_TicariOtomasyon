@@ -12,7 +12,7 @@ namespace MVC_TicariOtomasyon.Models.Entities
         public DateTime Date { get; set; }
         public int Piece { get; set; }
         public decimal Price { get; set; }
-        public decimal Amount { get; set; }
+        public decimal? Amount { get; set; }
 
         public int ProductId { get; set; }
         public int EmployeeId { get; set; }

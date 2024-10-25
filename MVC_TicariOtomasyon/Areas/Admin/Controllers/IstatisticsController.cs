@@ -32,12 +32,23 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
             ViewBag.enCokSatanUrun = context.SalesMovements.OrderByDescending(x => x.Piece).Select(x => x.Product.ProductName).FirstOrDefault();
             ViewBag.kasadakiTutar = context.SalesMovements.Sum(x => x.Amount).ToString();
             ViewBag.bugunkuSatis = context.SalesMovements.Where(x => x.Date == DateTime.Today).Select(x => x.Piece).Count().ToString();
-            ViewBag.bugunkuKazanc = context.SalesMovements.Where(x => x.Date == DateTime.Today).Sum(x => x.Amount).ToString();
+
+            
+            if (context.SalesMovements.Where(x => x.Date == DateTime.Today).Sum(x => x.Amount)==null)
+            {
+                ViewBag.bugunkuKazanc = "0";
+            }
+            else
+            {
+                ViewBag.bugunkuKazanc = context.SalesMovements.Where(x => x.Date == DateTime.Today).Sum(x => x.Amount).ToString();
+                
+            }
+            
             return View();
         }
         public ActionResult SimpleTables()
         {
-            ViewBag.baslik = "Dashboard";
+            ViewBag.baslik = "Kolay Tablolar";
 
             var sehirler = context.Customers.Select(x => x.City).ToList();
             var liste = sehirler.GroupBy(x => x).OrderByDescending(y => y.Count()).Select(s => new SehirModel { Key = s.Key, Count = s.Count() }).ToList();
@@ -45,8 +56,22 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
 
 
 
+            var departmanlar=context.Employees.Select(x => x.Department.DepartmentName).ToList();
+            var liste2=departmanlar.GroupBy(x=>x).OrderByDescending(y=>y.Count()).Select(s=>new SehirModel { Key=s.Key,Count = s.Count() }).ToList();
+            ViewBag.list2=liste2;
 
 
+            var musteriList=context.Customers.ToList();
+            ViewBag.list3=musteriList;
+
+
+            var urunList=context.Products.ToList();
+            ViewBag.list4=urunList;
+
+
+            var markalar=context.Products.Select(x=>x.Brand).ToList();
+            var liste5=markalar.GroupBy(x=>x).OrderByDescending(y=>y.Count()).Select(s=> new SehirModel { Key=s.Key, Count = s.Count() }).ToList();
+            ViewBag.list5=liste5;
 
             return View();
         }

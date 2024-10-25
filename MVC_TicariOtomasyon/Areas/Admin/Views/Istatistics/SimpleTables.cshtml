@@ -4,8 +4,17 @@
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 
     int a = 0;
+    int b = 0;
+    int c = 0;
+    int d = 0;
+    int e = 0;
+
 
     var list = ViewBag.list;
+    var list2 = ViewBag.list2;
+    var list3 = ViewBag.list3;
+    var list4 = ViewBag.list4;
+    var list5 = ViewBag.list5;
     string musteriSehir = "";
 }
 
@@ -15,7 +24,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Kategoriler</h3>
+                        <h3 class="card-title"> <b>Kategoriler </b></h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -72,13 +81,13 @@
                             </tbody>
                         </table>
                     </div>
-                                
+
                 </div>
                 <!-- /.card -->
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Müşteri Şehir Sayısı</h3>
+                        <h3 class="card-title"> <b>Müşteri Şehir Sayısı </b></h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body p-0">
@@ -96,24 +105,24 @@
                                 @foreach (var item in list)
                                 {
 
-                                    if (item.Count==1)
+                                    if (item.Count == 1)
                                     {
-                                        musteriSehir="bg-danger";
+                                        musteriSehir = "bg-danger";
                                     }
-                                    if (item.Count >=2 && item.Count<=5)
+                                    if (item.Count >= 2 && item.Count <= 5)
                                     {
                                         musteriSehir = "bg-warning";
                                     }
-                                    if(item.Count>=6)
+                                    if (item.Count >= 6)
                                     {
                                         musteriSehir = "bg-success";
                                     }
                                     a++;
 
-                                    
-                                        decimal degerW = 0;
-                                  
-                                      degerW=  (item.Count*100 / 10);
+
+                                    decimal degerW = 0;
+
+                                    degerW = (item.Count * 100 / 10);
                                     <tr>
                                         <td>
                                             @a.
@@ -140,60 +149,31 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Simple Full Width Table</h3>                     
+                        <h3 class="card-title"><b>  Departman Personel Sayıları</b> </h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body p-0">
-                        <table class="table">
+                        <table class="table table-bordered">
                             <thead>
+
                                 <tr>
                                     <th style="width: 10px">#</th>
-                                    <th>Task</th>
-                                    <th>Progress</th>
-                                    <th style="width: 40px">Label</th>
+                                    <th>Departman</th>
+                                    <th style="width: 40px">Kişi Sayısı</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Update software</td>
-                                    <td>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                        </div>
-                                    </td>
-                                    <td><span class="badge bg-danger">55%</span></td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>Clean database</td>
-                                    <td>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar bg-warning" style="width: 70%"></div>
-                                        </div>
-                                    </td>
-                                    <td><span class="badge bg-warning">70%</span></td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>Cron job running</td>
-                                    <td>
-                                        <div class="progress progress-xs progress-striped active">
-                                            <div class="progress-bar bg-primary" style="width: 30%"></div>
-                                        </div>
-                                    </td>
-                                    <td><span class="badge bg-primary">30%</span></td>
-                                </tr>
-                                <tr>
-                                    <td>4.</td>
-                                    <td>Fix and squish bugs</td>
-                                    <td>
-                                        <div class="progress progress-xs progress-striped active">
-                                            <div class="progress-bar bg-success" style="width: 90%"></div>
-                                        </div>
-                                    </td>
-                                    <td><span class="badge bg-success">90%</span></td>
-                                </tr>
+                                @foreach (var item in ViewBag.list2)
+                                {
+                                    b++;
+                                    <tr>
+                                        <td>@b</td>
+                                        <td>@item.Key</td>
+                                        <td><span class="badge bg-danger">@item.Count</span></td>
+                                    </tr>
+                                }
+
+
                             </tbody>
                         </table>
                     </div>
@@ -203,7 +183,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Striped Full Width Table</h3>
+                        <h3 class="card-title"><b> Marka Sayıları</b></h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body p-0">
@@ -211,52 +191,27 @@
                             <thead>
                                 <tr>
                                     <th style="width: 10px">#</th>
-                                    <th>Task</th>
+                                    <th>Marka</th>
                                     <th>Progress</th>
-                                    <th style="width: 40px">Label</th>
+                                    <th style="width: 40px">Sayı</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Update software</td>
-                                    <td>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                        </div>
-                                    </td>
-                                    <td><span class="badge bg-danger">55%</span></td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>Clean database</td>
-                                    <td>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar bg-warning" style="width: 70%"></div>
-                                        </div>
-                                    </td>
-                                    <td><span class="badge bg-warning">70%</span></td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>Cron job running</td>
-                                    <td>
-                                        <div class="progress progress-xs progress-striped active">
-                                            <div class="progress-bar bg-primary" style="width: 30%"></div>
-                                        </div>
-                                    </td>
-                                    <td><span class="badge bg-primary">30%</span></td>
-                                </tr>
-                                <tr>
-                                    <td>4.</td>
-                                    <td>Fix and squish bugs</td>
-                                    <td>
-                                        <div class="progress progress-xs progress-striped active">
-                                            <div class="progress-bar bg-success" style="width: 90%"></div>
-                                        </div>
-                                    </td>
-                                    <td><span class="badge bg-success">90%</span></td>
-                                </tr>
+                                @foreach (var item in list5)
+                                {
+                                    e++;
+                                    <tr>
+                                        <td>@e</td>
+                                        <td>@item.Key</td>
+                                        <td>
+                                            <div class="progress progress-xs">
+                                                <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-danger">@item.Count</span></td>
+                                    </tr>
+                                }
+
                             </tbody>
                         </table>
                     </div>
@@ -271,7 +226,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Responsive Hover Table</h3>
+                        <h3 class="card-title"> <b> Müşterilerimiz</b></h3>
 
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
@@ -288,42 +243,26 @@
                         <table class="table table-hover text-nowrap">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>User</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Reason</th>
+                                    <th>#</th>
+                                    <th>Müşteri Adı Soyadı</th>
+                                    <th>Şehir</th>
+                                    <th>Durum</th>
+                                    <th>Mail</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>183</td>
-                                    <td>John Doe</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="tag tag-success">Approved</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                </tr>
-                                <tr>
-                                    <td>219</td>
-                                    <td>Alexander Pierce</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="tag tag-warning">Pending</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                </tr>
-                                <tr>
-                                    <td>657</td>
-                                    <td>Bob Doe</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="tag tag-primary">Approved</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                </tr>
-                                <tr>
-                                    <td>175</td>
-                                    <td>Mike Doe</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="tag tag-danger">Denied</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                </tr>
+                                @foreach (var item in ViewBag.list3)
+                                {
+                                    c++;
+                                    <tr>
+                                        <td>@c</td>
+                                        <td>@item.Name @item.Surname</td>
+                                        <td>@item.City</td>
+                                        <td><span class="tag tag-success">@item.Status</span></td>
+                                        <td>@item.Mail</td>
+                                    </tr>
+                                }
+
                             </tbody>
                         </table>
                     </div>
@@ -337,7 +276,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Fixed Header Table</h3>
+                        <h3 class="card-title"><b> Ürünler </b> </h3>
 
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
@@ -354,70 +293,28 @@
                         <table class="table table-head-fixed text-nowrap">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>User</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Reason</th>
+                                    <th>#</th>
+                                    <th>Ürün Adı</th>
+                                    <th>Marka</th>
+                                    <th>Stok</th>
+                                    <th>Alış Fiyatı</th>
+                                    <th>Satış Fiyatı</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>183</td>
-                                    <td>John Doe</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="tag tag-success">Approved</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                </tr>
-                                <tr>
-                                    <td>219</td>
-                                    <td>Alexander Pierce</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="tag tag-warning">Pending</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                </tr>
-                                <tr>
-                                    <td>657</td>
-                                    <td>Bob Doe</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="tag tag-primary">Approved</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                </tr>
-                                <tr>
-                                    <td>175</td>
-                                    <td>Mike Doe</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="tag tag-danger">Denied</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                </tr>
-                                <tr>
-                                    <td>134</td>
-                                    <td>Jim Doe</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="tag tag-success">Approved</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                </tr>
-                                <tr>
-                                    <td>494</td>
-                                    <td>Victoria Doe</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="tag tag-warning">Pending</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                </tr>
-                                <tr>
-                                    <td>832</td>
-                                    <td>Michael Doe</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="tag tag-primary">Approved</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                </tr>
-                                <tr>
-                                    <td>982</td>
-                                    <td>Rocky Doe</td>
-                                    <td>11-7-2014</td>
-                                    <td><span class="tag tag-danger">Denied</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                </tr>
+                                @foreach (var item in ViewBag.list4)
+                                {
+                                    d++;
+                                    <tr>
+                                        <td>@d</td>
+                                        <td>@item.ProductName</td>
+                                        <td>@item.Brand</td>
+                                        <td>@item.Stock</td>
+                                        <td><span class="tag tag-success">@item.BuyingPrice</span></td>
+                                        <td>@item.SalePrice</td>
+                                    </tr>
+
+                                }
                             </tbody>
                         </table>
                     </div>

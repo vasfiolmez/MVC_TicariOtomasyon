@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
 {
@@ -89,11 +90,22 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
 
         public ActionResult DetailEmployee(int id)
         {
-            var personelAdı = context.Employees.Where(x => x.EmployeeId == id).Select(y => y.Name +" "+y.Surname).FirstOrDefault();
+            var personelAdı = context.Employees.Where(x => x.EmployeeId == id).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
             ViewBag.baslik = "Personel Satış Hareketleri: " + personelAdı;
             var values = context.SalesMovements.Where(x => x.EmployeeId == id).ToList();
             return View(values);
         }
-       
+
+        public ActionResult PageDetailEmployees(int page = 1, int pageSize = 6)
+        {
+            ViewBag.baslik = "Personel Detayları Listesi";
+            var values = context.Employees.OrderBy(x => x.EmployeeId).Skip((page - 1) * pageSize).Take(pageSize).ToList();
+
+            int totalRecords = context.Employees.Count();
+            ViewBag.TotalPages = (int)Math.Ceiling((double)totalRecords / pageSize);
+            ViewBag.CurrentPage = page;
+            return View(values);
+        }
+
     }
 }

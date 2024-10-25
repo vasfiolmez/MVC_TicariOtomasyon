@@ -19,5 +19,6 @@ namespace MVC_TicariOtomasyon.Context
         public DbSet<InvoiceItem> InvoiceItems { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<SalesMovement> SalesMovements { get; set; }
+        public DbSet<ToDoList> ToDoLists { get; set; }
     }
 }
