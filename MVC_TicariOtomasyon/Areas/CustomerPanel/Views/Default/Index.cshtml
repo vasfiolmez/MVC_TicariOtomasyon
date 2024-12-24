@@ -1,0 +1,41 @@
+﻿@model MVC_TicariOtomasyon.Models.Entities.Customer
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/CustomerPanel/Views/CustomerLayout/Index.cshtml";
+}
+
+<form method="post">
+    <table class="table table-bordered">
+        <tr>
+            <td> <label> Mail Adresi:@HttpContext.Current.User.Identity.Name </label></td>
+        </tr>
+        <tr>
+            
+            <td>
+                <label>Ad</label>
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            
+            <td>
+                <label>Soyad</label>
+                @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Şehir</label>
+                @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Şifre</label>
+                @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+            </td>
+        </tr>
+    </table>
+    <button class="btn btn-warning"> Bilgilerimi Güncelle</button>
+</form>
+

@@ -2,7 +2,6 @@
 @{
     ViewBag.Title = "InvoiceList";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
-    int count = 0;
 }
 
 
@@ -10,9 +9,7 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th style="width: 10px">#</th>
-            <th>Seri No </th>
-            <th>Sıra No</th>
+            <th>Seri Sıra No </th>
             <th>Vergi Dairesi</th>
             <th>Saat</th>
             <th>Tarih</th>
@@ -27,12 +24,9 @@
     </thead>
     <tbody>
         @foreach (var item in Model)
-        {
-            count++;
+        {         
             <tr>
-                <td>@item.InvoiceId</td>
-                <td>@item.InvoiceSerialNo</td>
-                <td>@item.InvoiceSequenceNo</td>
+                <td>@item.InvoiceSerialNo @item.InvoiceSequenceNo</td>            
                 <td>@item.TaxOffice</td>
                 <td>@item.Hour</td>
                 <td>@item.Date.ToShortDateString()</td>

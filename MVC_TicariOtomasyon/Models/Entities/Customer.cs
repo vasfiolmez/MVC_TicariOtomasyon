@@ -28,6 +28,12 @@ namespace MVC_TicariOtomasyon.Models.Entities
         [StringLength(30)]
         public string Mail { get; set; }
 
+        [Column(TypeName = "Varchar")]
+        [StringLength(20)]
+        public string Password { get; set; }
+
+
+
         public bool Status { get; set; }
 
         public ICollection<SalesMovement> SalesMovements { get; set; }

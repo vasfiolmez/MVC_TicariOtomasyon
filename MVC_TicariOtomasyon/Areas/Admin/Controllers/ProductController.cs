@@ -11,11 +11,16 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         TicariOtomasyonContext context =new TicariOtomasyonContext();
-        public ActionResult ProductList()
+        public ActionResult ProductList(string productName)
         {
             ViewBag.baslik = "Ürün Listesi";
-            var values=context.Products.Where(x=>x.Status==true).ToList();
-            return View(values);
+
+            var products= from x in context.Products select x;
+            if (!string.IsNullOrEmpty(productName))
+            {
+                products = products.Where(x => x.ProductName.Contains(productName));
+            }
+            return View(products.ToList());
         }
         [HttpGet]
         public ActionResult CreateProduct()

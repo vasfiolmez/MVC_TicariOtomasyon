@@ -8,7 +8,6 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
 {
     public class AdminLayoutController : Controller
     {
-        // GET: Admin/AdminLayout
         public ActionResult Index()
         {
             return View();

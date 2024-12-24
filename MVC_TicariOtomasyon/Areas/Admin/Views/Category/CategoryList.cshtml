@@ -1,7 +1,10 @@
-﻿@model  List<MVC_TicariOtomasyon.Models.Entities.Category>
+﻿@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<MVC_TicariOtomasyon.Models.Entities.Category>
 @{
     ViewBag.Title = "CategoryList";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int sayı = 0;
 }
 
 <table class="table table-bordered">
@@ -15,9 +18,10 @@
     </thead>
     <tbody>
         @foreach(var item in Model)
-            {
+        {
+            sayı++;
             <tr>
-                <td> @item.CategoryId</td>
+                <td>@sayı</td>
                 <td>@item.Name</td>
                 <td><a href="/Admin/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Sil</a></td>
                 <td><a href="/Admin/Category/UpdateCategory/@item.CategoryId" class="btn btn-success">Güncelle</a></td>
@@ -25,6 +29,8 @@
             }             
     </tbody>
 </table>
+<br />
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("CategoryList", new {page}),new PagedListRenderOptions { LiElementClasses=new List<string> { "page-item page-link"}})               
 <br />
 <a href="/Admin/Category/CreateCategory/" class="btn btn-primary">Yeni Kategori Oluştur</a>
 

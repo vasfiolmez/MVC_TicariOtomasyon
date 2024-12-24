@@ -1,0 +1,22 @@
+﻿@model List<MVC_TicariOtomasyon.Models.Entities.SalesMovement>
+@{
+    ViewBag.Title = "Orders";
+    Layout = "~/Areas/CustomerPanel/Views/CustomerLayout/Index.cshtml";
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ürün Adı</th>
+        <th>Fiyat</th>
+        <th>Tarih</th>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.Product.ProductName</td>
+                    <td>@item.Price</td>
+                    <td>@item.Date</td>
+                </tr>
+            }
+</table>

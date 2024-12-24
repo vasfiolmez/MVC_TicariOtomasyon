@@ -1,5 +1,6 @@
 ﻿using MVC_TicariOtomasyon.Context;
 using MVC_TicariOtomasyon.Models.Entities;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,10 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
         TicariOtomasyonContext context = new TicariOtomasyonContext();
-        public ActionResult CategoryList()
+        public ActionResult CategoryList(int page=1)
         {
             ViewBag.baslik = "Kategori Listesi";
-            var values = context.Categories.ToList();
+            var values = context.Categories.ToList().ToPagedList(page, 4);
             return View(values);
         }
         [HttpGet]

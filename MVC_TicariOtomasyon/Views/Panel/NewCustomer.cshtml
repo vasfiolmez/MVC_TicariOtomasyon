@@ -1,0 +1,58 @@
+﻿@model MVC_TicariOtomasyon.Models.Entities.Customer
+@{
+    ViewBag.Title = "NewCustomer";
+    Layout = "~/Views/Panel/PanelLayout.cshtml";
+}
+
+<div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" style="background-image: url('/login-form-06/images/pexels-photo-6969654.jpeg'); "></div>
+    <div class="contents order-2 order-md-1">
+
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7">
+                    <div class="mb-4">
+                        <h3>Müşteri Kayıt Formu</h3>
+                        <p class="mb-4"></p>
+                    </div>
+
+                    <form method="post">
+                        <div class="form-group ">
+                            <label for="username">Adınız </label>
+                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @required = "required" })
+
+                        </div>
+                        <br />
+                        <div class="form-group ">
+                            <label for="username">Soyadınız </label>
+                            @Html.TextBoxFor(x => x.Surname, new { @class = "form-control", @required = "required" })
+
+                        </div>
+                        <br />
+                        <div class="form-group ">
+                            <label for="username">Şehir </label>
+                            @Html.TextBoxFor(x => x.City, new { @class = "form-control", @required = "required" })
+
+                        </div>
+                        <br />
+                        <div class="form-group ">
+                            <label for="username">Mail Adresiniz </label>
+                            @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", @required = "required" })
+
+                        </div>
+                        <br />
+                        <div class="form-group ">
+                            <label for="username">Şifre </label>
+                            @Html.TextBoxFor(x => x.Password, new { @class = "form-control", @required = "required" })
+
+                        </div>
+                        <br />
+                        <input type="submit" value="Kayıt Ol" class="btn btn-block btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

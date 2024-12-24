@@ -25,7 +25,7 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult CreateCustomer(Customer customer)
+        public ActionResult CreateCustomer(MVC_TicariOtomasyon.Models.Entities.Customer customer)
         {
             ViewBag.baslik = "Müşteri Oluşturma Sayfası";
             context.Customers.Add(customer);
@@ -57,7 +57,7 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateCustomer(Customer customer)
+        public ActionResult UpdateCustomer(MVC_TicariOtomasyon.Models.Entities.Customer customer)
         {
             if (!ModelState.IsValid) 
             {
