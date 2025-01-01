@@ -36,7 +36,7 @@
                
                 <td>
                     <a href="/Admin/Invoice/UpdateInvoice/@item.InvoiceId" class="btn btn-default" style="background-color:lightgoldenrodyellow">Güncelle</a>
-                    <a href="/Admin/Invoice/DetailInvoice/@item.InvoiceId" class="btn btn-default" style="background-color:greenyellow">Detaylar</a>
+                    <a href="/Admin/Invoice/DetailInvoice/@item.InvoiceId" class="btn btn-default" style="background-color:greenyellow">Detaylar</a>             
                 </td>
             </tr>
         }
@@ -44,6 +44,35 @@
 </table>
 <br />
 <a href="/Admin/Invoice/CreateInvoice/" class="btn btn-primary">Yeni Fatura Girişi</a>
+<br />
+<br />
+<button type="button"class="btn btn-warning" data-toggle="modal" data-target="#modal1" >Popup penceresi</button>
+
+<div class="modal" id="modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Popup Diyalog Ekranı</h2>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Seri Sıra no</th>
+                        <th>Tutar</th>
+                    </tr>
+                    @foreach(var item in Model)
+            {
+                <tr>
+                    <td> @item.InvoiceSerialNo @item.InvoiceSequenceNo</td>
+                    <td> @item.Toplam</td>
+                </tr>
+            }
+                </table>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"> Kapat </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

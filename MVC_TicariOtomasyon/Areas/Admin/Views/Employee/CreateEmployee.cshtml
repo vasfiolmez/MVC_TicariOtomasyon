@@ -4,7 +4,7 @@
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
 
     @Html.HiddenFor(x=>x.EmployeeId)
 
@@ -14,8 +14,11 @@
     <label>Personel Soyadı</label>
     @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
     <br />
-    <label>Resmi</label>
-    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+    <div class="form-group">
+    <label for="resim">Resim Seç:</label>
+    <input type="file" name="resim" class="form-control" id="resim">
+    </div>
+    @*@Html.TextBoxFor(x => x.Image, new { @class = "form-control" })*@
     <br />
     <label></label>
     @Html.DropDownListFor(x => x.DepartmentId,(List<SelectListItem>)ViewBag.employeeDepartment, new { @class = "form-control" })
@@ -23,5 +26,4 @@
 
     <button class="btn btn-primary">Personeli Oluştur</button>
 </form>
-
 

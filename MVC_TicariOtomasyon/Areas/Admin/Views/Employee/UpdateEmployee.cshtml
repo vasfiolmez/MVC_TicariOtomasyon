@@ -4,8 +4,8 @@
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
 
-<form method="post">
-
+<form method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken();
     @Html.HiddenFor(x => x.EmployeeId)
     <label>Personel Adı</label>
     @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
@@ -13,8 +13,14 @@
     <label>Personel Soyadı</label>
     @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
     <br />
-    <label>Resmi</label>
-    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+    <div class="form-group">
+        @if (!string.IsNullOrEmpty(Model.Image))
+        {
+            <img src="@Model.Image" width="100" alt="Mevcut Resim" />
+        }
+        <label for="resim">Resim Seç (Yeni resim yüklemek için):</label>
+        <input type="file" name="resim" id="resim" class="form-control"/>
+    </div>
     <br />
     <label></label>
     @Html.DropDownListFor(x => x.DepartmentId, (List<SelectListItem>)ViewBag.employeeDepartment, new { @class = "form-control" })

@@ -1,7 +1,9 @@
-﻿using MVC_TicariOtomasyon.Context;
+﻿using Microsoft.AspNetCore.Http;
+using MVC_TicariOtomasyon.Context;
 using MVC_TicariOtomasyon.Models.Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -35,9 +37,31 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult CreateEmployee(Employee employee)
+        public ActionResult CreateEmployee(Employee employee, HttpPostedFileBase resim)
         {
             ViewBag.baslik = "Yeni Personel Girişi";
+
+            if (resim!=null&&resim.ContentLength>0)
+            {
+                string fileName = Path.GetFileName(resim.FileName);
+                string path = Path.Combine(Server.MapPath("~/Image/"), fileName);
+
+                if (System.IO.File.Exists(path))
+                {
+                    fileName = Guid.NewGuid().ToString() + Path.GetExtension(resim.FileName);
+                    path= Path.Combine(Server.MapPath("~/Image/"), fileName);
+                }
+
+                resim.SaveAs(path);
+                employee.Image = "/Image/" + fileName;
+
+                //string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                //string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                //string yol = "~/Image/" + dosyaAdi + uzanti;
+                //Request.Files[0].SaveAs(Server.MapPath(yol));
+                //employee.Image = "/Image/" + dosyaAdi + uzanti;
+            }
+
             context.Employees.Add(employee);
             context.SaveChanges();
             return RedirectToAction("EmployeeList", "Employee", "Admin");
@@ -76,13 +100,43 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateEmployee(Employee employee)
+        public ActionResult UpdateEmployee(Employee employee,HttpPostedFileBase resim)
         {
+
             ViewBag.baslik = "Personel Bilgisi Güncelleme";
             var value = context.Employees.Find(employee.EmployeeId);
+
+            if (value==null)
+            {
+                return HttpNotFound();
+            }
+            if (resim !=null && resim.ContentLength>0)
+            {
+                if (!string.IsNullOrEmpty(value.Image))
+                {
+                    string eskiResimYolu = Server.MapPath(value.Image);
+                    if (System.IO.File.Exists(eskiResimYolu))
+                    {
+                        System.IO.File.Delete(eskiResimYolu);
+                    }
+                }
+                string fileName = Path.GetFileName(resim.FileName);
+                string path = Path.Combine(Server.MapPath("~/Image/"), fileName);
+
+                if (System.IO.File.Exists(path))
+                {
+                    fileName = Guid.NewGuid().ToString() + Path.GetExtension(resim.FileName);
+                    path = Path.Combine(Server.MapPath("~/Image/"), fileName);
+                }
+
+                resim.SaveAs(path);
+                value.Image = "/Image/" + fileName;
+            }
+
+
             value.Name = employee.Name;
             value.Surname = employee.Surname;
-            value.Image = employee.Image;
+        
             value.DepartmentId = employee.DepartmentId;
             context.SaveChanges();
             return RedirectToAction("EmployeeList", "Employee", "Admin");
