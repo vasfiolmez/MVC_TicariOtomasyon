@@ -160,6 +160,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminLayoutController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AlertsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CargoController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
     <Compile Include="Areas\Admin\Controllers\DepartmentController.cs" />
@@ -183,8 +185,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202501021146169_kargotest.cs" />
+    <Compile Include="Migrations\202501021146169_kargotest.Designer.cs">
+      <DependentUpon>202501021146169_kargotest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entities\Admin.cs" />
+    <Compile Include="Models\Entities\CargoDetail.cs" />
+    <Compile Include="Models\Entities\CargoTracking.cs" />
     <Compile Include="Models\Entities\Category.cs" />
     <Compile Include="Models\Entities\Customer.cs" />
     <Compile Include="Models\Entities\Department.cs" />
@@ -2500,6 +2508,7 @@
     <Content Include="Areas\CustomerPanel\Views\CustomerLayout\Index.cshtml" />
     <Content Include="Areas\CustomerPanel\Views\Default\Index.cshtml" />
     <Content Include="Areas\CustomerPanel\Views\Default\Orders.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\SalesProduct.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2539,6 +2548,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Alert\" />
+    <Folder Include="Areas\Admin\Views\CargoDetail\" />
     <Folder Include="Areas\Admin\Views\Istatıstıcs\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\CustomerPanel\Data\" />
@@ -2584,6 +2595,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202501021146169_kargotest.resx">
+      <DependentUpon>202501021146169_kargotest.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
