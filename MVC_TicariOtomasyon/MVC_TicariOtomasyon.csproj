@@ -65,6 +65,11 @@
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.6.0\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -148,6 +153,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -160,7 +166,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminLayoutController.cs" />
-    <Compile Include="Areas\Admin\Controllers\AlertsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GrafikController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QrCodeController.cs" />
     <Compile Include="Areas\Admin\Controllers\CargoController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
@@ -2509,6 +2516,11 @@
     <Content Include="Areas\CustomerPanel\Views\Default\Index.cshtml" />
     <Content Include="Areas\CustomerPanel\Views\Default\Orders.cshtml" />
     <Content Include="Areas\Admin\Views\Product\SalesProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Cargo\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Cargo\NewCargoAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\Cargo\CargoDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\QrCode\GenerateQRCode.cshtml" />
+    <Content Include="Areas\Admin\Views\Grafik\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2549,7 +2561,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Alert\" />
-    <Folder Include="Areas\Admin\Views\CargoDetail\" />
     <Folder Include="Areas\Admin\Views\Istatıstıcs\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\CustomerPanel\Data\" />
