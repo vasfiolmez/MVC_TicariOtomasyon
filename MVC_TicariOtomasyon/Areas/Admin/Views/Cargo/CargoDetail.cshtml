@@ -1,0 +1,26 @@
+﻿@model List< MVC_TicariOtomasyon.Models.Entities.CargoTracking>
+@{
+    ViewBag.Title = "CargoDetail";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+<br />
+<div class="bg-dark text-white p-3 rounded">
+    Kargo Takip Numarası: @ViewBag.code
+</div>
+
+<table class="table table-striped">
+    <tr>
+        <th>#</th>
+        <th>Açıklama</th>
+        <th>Tarih</th>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td></td>
+                    <td>@item.Description</td>
+                    <td>@item.DateTime</td>
+                </tr>
+            }
+</table>
+

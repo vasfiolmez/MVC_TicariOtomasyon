@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+@using (Html.BeginForm("GenerateQRCode", "QrCode", FormMethod.Post))
+{
+    @Html.TextBox("qrCodeContent", null, new { @class = "form-control", placeholder = "QR kod içeriği girin" })
+    <br />
+    <button type="submit" class="btn btn-outline-primary">QR Kod Oluştur</button>
+    <br />
+    if (ViewBag.QrCodeImage != null)
+    {
+        <img src="@ViewBag.QrCodeImage" width="350px" alt="QR Kod" id="qrCodeImage" />
+
+        <a id="downloadLink" class="btn btn-success mt-2" download="@ViewBag.QrCodeFileName">QR Kodu İndir</a>
+        <script>
+                const downloadLink = document.getElementById('downloadLink');
+                const qrCodeImage = document.getElementById('qrCodeImage');
+
+                downloadLink.href = qrCodeImage.src;
+        </script>
+    }
+
+
+
+}
