@@ -1,0 +1,60 @@
+﻿@model MVC_TicariOtomasyon.Models.Entities.SalesMovement
+@{
+    ViewBag.Title = "SalesProduct";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post">
+
+    <label>Ürün Id</label>
+    <input type="text" value="@ViewBag.productId" class="form-control" readonly />
+    <br />
+
+    <label>Ürün Adı</label>
+    @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.valuesProduct, new { @class = "form-control" })
+    <br />
+
+    <label>Müşteri Adı</label>
+    @Html.DropDownListFor(x => x.CustomerId, (List<SelectListItem>)ViewBag.valuesCustomer, new { @class = "form-control" })
+    <br />
+
+    <label>Personel Adı</label>
+    @Html.DropDownListFor(x => x.EmployeeId, (List<SelectListItem>)ViewBag.valuesEmployee, new { @class = "form-control" })
+    <br />
+
+    <label>Adet</label>
+    <input class="form-control" name="Piece" id="piece" , type="number" max="10" min="0" placeholder="Adet girin" />
+    <br />
+    <label>Satış Fiyatı</label>
+    <input type="text" id="price" value="@ViewBag.price" class="form-control" name="Price" />
+    <br />
+    <label>Toplam Fiyat</label>
+    <input type="text" id="amount" class="form-control" readonly />
+    <input type="hidden" id="hiddenAmount" name="Amount" />
+    <br />
+
+    <button class="btn btn-primary">Satış Yap</button>
+</form>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#piece, #price").on("input", function () {
+            var piece = parseFloat($("#piece").val()); // Adet (parseFloat kullanın)
+            var price = parseFloat($("#price").val()); // Satış fiyatı (parseFloat kullanın)
+
+            if (isNaN(piece)) { piece = 0; } // Eğer piece sayı değilse 0 yap
+            if (isNaN(price)) { price = 0; } // Eğer price sayı değilse 0 yap
+
+            var total = piece * price; // Toplam fiyat
+
+            $("#amount").val(total.toFixed(2)); // Toplam fiyatı textbox'a yazdır
+            $("#hiddenAmount").val(total.toFixed(2)); // Gizli alana yaz
+        });
+
+        // Sayfa yüklendiğinde bir kere çalıştırın (ilk hesaplama için)
+        $("#piece, #price").trigger("input");
+    });
+</script>
+
+

@@ -90,5 +90,52 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
             context.SaveChanges();
             return RedirectToAction("ProductList", "Product", "Admin");
         }
+        [HttpGet]
+        public ActionResult SalesProduct(int id)
+        {
+            ViewBag.baslik = "Satış Yap";
+
+            List<SelectListItem> valuesProduct = (from x in context.Products.ToList()
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.ProductName.ToString(),
+                                                      Value = x.ProductId.ToString(),
+                                                  }).ToList();
+
+            List<SelectListItem> valuesEmployee = (from x in context.Employees.ToList()
+                                                   select new SelectListItem
+                                                   {
+                                                       Text = x.Name + " " + x.Surname,
+                                                       Value = x.EmployeeId.ToString()
+                                                   }).ToList();
+
+
+            List<SelectListItem> valuesCustomer = (from x in context.Customers.ToList()
+                                                   select new SelectListItem
+                                                   {
+                                                       Text = x.Name + " " + x.Surname,
+                                                       Value = x.CustomerId.ToString()
+
+                                                   }).ToList();
+
+            ViewBag.valuesProduct = valuesProduct;
+            ViewBag.valuesEmployee = valuesEmployee;
+            ViewBag.valuesCustomer = valuesCustomer;
+
+            var values=context.Products.Find(id);
+            ViewBag.productId = values.ProductId; 
+            ViewBag.price=values.SalePrice.ToString(); 
+            return View();
+        }
+        [HttpPost]
+        public ActionResult SalesProduct(SalesMovement sales)
+        {
+            ViewBag.baslik = "Satış Yap";
+            sales.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            context.SalesMovements.Add(sales);
+
+            context.SaveChanges();
+            return RedirectToAction("SalesMovementList", "SalesMovement", "Admin");
+        }
     }
 }

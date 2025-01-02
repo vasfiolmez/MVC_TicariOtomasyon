@@ -3,12 +3,17 @@
     ViewBag.Title = "CreateCategory";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
-
+<script src="~/Scripts/jquery-3.4.1.js"></script>
 <form method="post">
 
     <label>Kategori Adı</label>
     @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
     <br />
 
-    <button class="btn btn-primary">Kategori Oluştur</button>
+    <button class="btn btn-primary" id="btn1">Kategori Oluştur</button>
+    <script>
+        $('#btn1').click(function () {
+            alert("Kategori başarılı bir şekilde Eklendi")
+        });
+    </script>
 </form>
