@@ -184,6 +184,7 @@
     <Compile Include="Areas\Admin\Controllers\ToDoListController.cs" />
     <Compile Include="Areas\CustomerPanel\Controllers\CustomerLayoutController.cs" />
     <Compile Include="Areas\CustomerPanel\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\CustomerPanel\Controllers\MessageController.cs" />
     <Compile Include="Areas\CustomerPanel\CustomerPanelAreaRegistration.cs" />
     <Compile Include="Areas\EmployeePanel\EmployeePanelAreaRegistration.cs" />
     <Compile Include="Context\TicariOtomasyonContext.cs" />
@@ -206,6 +207,7 @@
     <Compile Include="Models\Entities\Employee.cs" />
     <Compile Include="Models\Entities\Expenses.cs" />
     <Compile Include="Models\Entities\InvoiceItem.cs" />
+    <Compile Include="Models\Entities\Message.cs" />
     <Compile Include="Models\Entities\Product.cs" />
     <Compile Include="Models\Entities\Invoice.cs" />
     <Compile Include="Models\Entities\SalesMovement.cs" />
@@ -2522,6 +2524,8 @@
     <Content Include="Areas\Admin\Views\QrCode\GenerateQRCode.cshtml" />
     <Content Include="Areas\Admin\Views\Grafik\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Grafik\AreaChart.cshtml" />
+    <Content Include="Areas\CustomerPanel\Views\Message\MessageList.cshtml" />
+    <Content Include="Areas\CustomerPanel\Views\Message\SendMessageBox.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
