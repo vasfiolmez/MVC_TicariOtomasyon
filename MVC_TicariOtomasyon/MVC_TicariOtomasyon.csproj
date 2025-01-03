@@ -2521,6 +2521,7 @@
     <Content Include="Areas\Admin\Views\Cargo\CargoDetail.cshtml" />
     <Content Include="Areas\Admin\Views\QrCode\GenerateQRCode.cshtml" />
     <Content Include="Areas\Admin\Views\Grafik\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Grafik\AreaChart.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

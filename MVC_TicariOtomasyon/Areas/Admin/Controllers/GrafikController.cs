@@ -13,5 +13,9 @@ namespace MVC_TicariOtomasyon.Areas.Admin.Controllers
         {
             return View();
         }
+        public ActionResult AreaChart()
+        {
+            return View();
+        }
     }
 }
