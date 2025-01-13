@@ -1,10 +1,11 @@
 ﻿@model List<MVC_TicariOtomasyon.Models.Entities.CargoTracking>
+
 @{
     ViewBag.Title = "CargoDetail";
-    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    Layout = "~/Areas/CustomerPanel/Views/CustomerLayout/Index.cshtml";
     int sayi = 0;
 }
-<br />
+
 <div class="bg-dark text-white p-3 rounded">
     Kargo Takip Numarası: @ViewBag.code
 </div>
@@ -25,4 +26,6 @@
         </tr>
     }
 </table>
+
+
 

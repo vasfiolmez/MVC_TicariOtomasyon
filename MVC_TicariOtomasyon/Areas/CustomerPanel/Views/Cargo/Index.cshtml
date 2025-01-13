@@ -1,0 +1,45 @@
+﻿@model List<MVC_TicariOtomasyon.Models.Entities.CargoDetail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/CustomerPanel/Views/CustomerLayout/Index.cshtml";
+    int sayi = 0;
+}
+
+
+@using (Html.BeginForm("Index", "Cargo", FormMethod.Get))
+{
+    <p>
+        Kargo Takip Numarası:  @Html.TextBox("kargoTakipNo")
+        <input type="submit" value="Ara" />
+    </p>
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width: 10px">#</th>
+            <th>Kargo Takip Numarası</th>
+            <th>Personel</th>
+            <th>Alıcı</th>
+            <th>Tarih</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            sayi++;
+            <tr>
+                <td>@sayi</td>
+                <td><b>@item.TrackingCode </b></td>
+                <td>@item.Personel</td>
+                <td>@item.Alıcı</td>
+                <td>@item.Date.ToShortDateString()</td>
+                <td><a href="@Url.Action("CargoDetail", "Cargo", new {trackingcode=item.TrackingCode,area = "CustomerPanel"})" class="btn btn-warning">Detaylar</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+

@@ -182,6 +182,7 @@
     <Compile Include="Areas\Admin\Controllers\ProductDetailController.cs" />
     <Compile Include="Areas\Admin\Controllers\SalesMovementController.cs" />
     <Compile Include="Areas\Admin\Controllers\ToDoListController.cs" />
+    <Compile Include="Areas\CustomerPanel\Controllers\CargoController.cs" />
     <Compile Include="Areas\CustomerPanel\Controllers\CustomerLayoutController.cs" />
     <Compile Include="Areas\CustomerPanel\Controllers\DefaultController.cs" />
     <Compile Include="Areas\CustomerPanel\Controllers\MessageController.cs" />
@@ -2529,6 +2530,8 @@
     <Content Include="Areas\CustomerPanel\Views\Message\MessageDetail.cshtml" />
     <Content Include="Areas\CustomerPanel\Views\Message\MessageColmd3.cshtml" />
     <Content Include="Areas\CustomerPanel\Views\Message\NewMessage.cshtml" />
+    <Content Include="Areas\CustomerPanel\Views\Cargo\Index.cshtml" />
+    <Content Include="Areas\CustomerPanel\Views\Cargo\CargoDetail.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

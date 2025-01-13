@@ -23,6 +23,11 @@ namespace MVC_TicariOtomasyon
                url: "Admin/Cargo/CargoDetail/{trackingcode}",
                defaults: new { controller = "Cargo", action = "CargoDetail",Areas="Admin", trackingcode = UrlParameter.Optional }
            );
+            routes.MapRoute(
+              name: "CustomerCargoDetails",
+              url: "CustomerPanel/Cargo/CargoDetail/{trackingcode}",
+              defaults: new { controller = "Cargo", action = "CargoDetail", Areas = "CustomerPanel", trackingcode = UrlParameter.Optional }
+          );
         }
     }
 }
