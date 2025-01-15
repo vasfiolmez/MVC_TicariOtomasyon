@@ -189,6 +189,7 @@
     <Compile Include="Areas\CustomerPanel\CustomerPanelAreaRegistration.cs" />
     <Compile Include="Areas\EmployeePanel\EmployeePanelAreaRegistration.cs" />
     <Compile Include="Context\TicariOtomasyonContext.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PanelController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2532,6 +2533,9 @@
     <Content Include="Areas\CustomerPanel\Views\Message\NewMessage.cshtml" />
     <Content Include="Areas\CustomerPanel\Views\Cargo\Index.cshtml" />
     <Content Include="Areas\CustomerPanel\Views\Cargo\CargoDetail.cshtml" />
+    <Content Include="Areas\CustomerPanel\Views\Default\Messages.cshtml" />
+    <Content Include="Areas\CustomerPanel\Views\Default\Settings.cshtml" />
+    <Content Include="Areas\CustomerPanel\Views\Default\Duyuru.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2567,6 +2571,7 @@
     <Content Include="Views\Panel\EmployeeLogin.cshtml" />
     <Content Include="Views\Panel\CustomerLogin.cshtml" />
     <Content Include="Views\Panel\NewCustomer.cshtml" />
+    <Content Include="Views\Error\PageError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

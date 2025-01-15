@@ -9,7 +9,7 @@ using System.Web.Security;
 
 namespace MVC_TicariOtomasyon.Controllers
 {
-     
+    [AllowAnonymous]
     public class PanelController : Controller
     {
      

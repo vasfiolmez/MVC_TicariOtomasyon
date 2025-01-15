@@ -1,0 +1,35 @@
+﻿@model List<MVC_TicariOtomasyon.Models.Entities.Message>
+<div class="active tab-pane" id="messages">
+    @foreach (var item in Model)
+    {
+
+        <div class="post">
+
+            <div class="user-block">
+
+                <img class="img-circle img-bordered-sm" src="~/AdminLTE-3.0.4/dist/img/user1-128x128.jpg" alt="user image">
+
+                <span class="username">
+
+                    <a href="#">@item.Sender</a>
+
+                    <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+
+                </span>
+
+                <span class="description">@item.Subject - @item.SendDate.ToShortDateString()</span>
+
+            </div>
+
+            <!-- /.user-block -->
+
+            <p>
+
+                @item.Content
+
+            </p>
+
+        </div>
+    }
+
+</div>

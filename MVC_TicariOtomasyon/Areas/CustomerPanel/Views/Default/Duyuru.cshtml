@@ -1,0 +1,44 @@
+﻿@model List<MVC_TicariOtomasyon.Models.Entities.Message>
+
+<div class="tab-pane" id="timeline">
+
+    <div class="timeline timeline-inverse">
+
+        @foreach (var item in Model)
+        {
+
+            <div class="time-label">
+
+                <span class="bg-warning">
+
+                    @item.SendDate.ToShortDateString()
+
+                </span>
+
+            </div>
+
+            <div>
+
+                <i class="fas fa-envelope bg-primary"></i>
+
+                <div class="timeline-item">
+
+                    <span class="time"><i class="far fa-clock"></i> 12:05</span>
+
+                    <h3 class="timeline-header"><a href="#">@item.Subject</a></h3>
+
+                    <div class="timeline-body">
+                        @item.Content
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        }
+
+    </div>
+
+</div>
